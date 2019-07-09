@@ -7,6 +7,15 @@ div{
 }
 
 
+body {
+    background-color: white;
+  }
+
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  }
 
 #morespecific{
     background-color: red;
