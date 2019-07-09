@@ -1,6 +1,6 @@
        
 div{
-    color:red
+    color:Black
 }
 .italic{
  font-style: italic;
@@ -15,6 +15,10 @@ body {
     body {
       background-color: lightblue;
     }
+  }
+
+  #grad {
+background: linear-gradient(red,yellow);
   }
 
 #morespecific{
