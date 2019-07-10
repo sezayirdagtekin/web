@@ -4,12 +4,18 @@
 <head>
     <meta charset="utf-8">
     <title> MY html page!</title>   
+    <script>
+    
+    function showDate(){
+        document.getElementById('demo').innerHTML=Date();
+    }
+    </script>
 
 </head>
 
 <body>
 
-    <button type="button" onclick="document.getElementById('demo').innerHTML=Date();">
+    <button type="button" onclick="showDate()">
     See the date
     </button>
 
