@@ -12,16 +12,39 @@
 <body>
 
   <div id="app">
+<div>
     <p v-if="error" class="error"> {{error}} </p>
     <input type="text" placeholder="Enter name" name="username" value="" v-model="username" />
     <input type="text" placeholder="Enter age" name="userage" value="" v-model="userage" />
-    <button type="button" @click="add"> Add </button>
+    <button type="button" @click="add" class="colorBtn"> Add </button>
+  </div>
 
-    <ul>
-      <li v-for="item in users">
-        {{item.name}} - {{item.userage}}
-      </li>
-    </ul>
+
+<div>
+    <table>
+      <thead>
+          <tr>
+          <th>Name</th>
+          <th>Age</th>     
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in users">
+          <td>
+            {{item.name}} 
+          </td>
+          <td>
+            {{item.age}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
   </div>
 
   <script src="app.js"></script>

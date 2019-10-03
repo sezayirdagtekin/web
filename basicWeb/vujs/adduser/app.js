@@ -5,7 +5,7 @@ new Vue({
 		error: '',
 		username: '',
 		userage: '',
-		users: [{ "name": "Lionel Messi", "userage": 27 }, { "name": "Luis suarez", "userage": 29 }, { "name": "Antoine Griezmann", "userage": 32 }],
+		users: [{ "name": "Lionel Messi", "age": 27 }, { "name": "Luis suarez", "age": 29 }, { "name": "Antoine Griezmann", "age": 32 }],
 	},
 	methods: {
 		add() {
@@ -17,7 +17,7 @@ new Vue({
 				this.error = "Please enter age!"
 			}
 			else {
-				this.users.push({ 'name': this.username, userage: this.userage });
+				this.users.push({ 'name': this.username, age: this.userage });
 			}
 		}
 	}
