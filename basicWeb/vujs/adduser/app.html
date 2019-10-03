@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Vu Js</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
   <!-- development version, includes helpful console warnings -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 </head>
 
 <body>
 
   <div id="app">
-
     <p v-if="error" class="error"> {{error}} </p>
-
     <input type="text" placeholder="Enter name" name="username" value="" v-model="username" />
     <input type="text" placeholder="Enter age" name="userage" value="" v-model="userage" />
     <button type="button" @click="add"> Add </button>
@@ -23,15 +24,8 @@
     </ul>
   </div>
 
-
   <script src="app.js"></script>
 
-  <style>
-    .error {
-      color: #c82829;
-      background-color: bisque
-    }
-  </style>
 </body>
 
 </html>
