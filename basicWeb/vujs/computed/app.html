@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vu Js</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+  <div>
+    <h2> VueJs computed example</h2>
+  </div>
+  <div id="computed">
+
+    <label for="message">Your message:</label>
+    <input type="text" name="message" value="" placeholder="Enter message" v-model="message" />
+    <p>Computed reversed message: {{ reversedMessage }}</p>
+
+  </div>
+
+  <script src="computed.js"></script>
+
+</body>
+
+</html>
