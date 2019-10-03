@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vu Js</title>
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+
+    <p v-if="error" class="error"> {{error}} </p>
+
+    <input type="text" placeholder="Enter name" name="username" value="" v-model="username" />
+    <input type="text" placeholder="Enter age" name="userage" value="" v-model="userage" />
+    <button type="button" @click="add"> Add </button>
+
+    <ul>
+      <li v-for="item in users">
+        {{item.name}} - {{item.userage}}
+      </li>
+    </ul>
+  </div>
+
+
+  <script src="app.js"></script>
+
+  <style>
+    .error {
+      color: #c82829;
+      background-color: bisque
+    }
+  </style>
+</body>
+
+</html>
