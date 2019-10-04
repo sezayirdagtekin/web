@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vu Js</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+  <div>
+    <h2> VueJs event handling examples</h2>
+  </div>
+  <div id="eventHandler">
+
+    <input type="text" name="counter" value="" v-model="counter" disabled=true />
+    <button v-on:click="incrementer">increment</button>
+
+
+  </div>
+
+  <script src="event.js"></script>
+
+</body>
+
+</html>
