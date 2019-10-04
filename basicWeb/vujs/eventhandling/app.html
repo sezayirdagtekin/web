@@ -16,8 +16,15 @@
   </div>
   <div id="eventHandler">
 
-    <input type="text" name="counter" value="" v-model="counter" disabled=true />
-    <button v-on:click="incrementer" class="btnColorFull">increment</button>
+    <div>
+      <input type="text" name="counter" value="" v-model="counter" disabled=true />
+      <button v-on:click="incrementer" class="btnColorFull">increment</button>
+    </div>
+
+    <div>
+      <input type="text" name="name" value="" v-model="name" disabled=true />
+      <button v-on:click="greeting" class="btnColorFull">Say Hello</button>
+    </div>
 
 
   </div>
