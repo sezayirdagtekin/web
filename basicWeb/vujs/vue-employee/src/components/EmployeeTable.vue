@@ -1,34 +1,23 @@
 <template>
-  <div id="employe-table">
+  <div id="employee-table-id">
     <table>
-      <thead>
-        <tr>
-          <th>Employee name</th>
-          <th>Employee email</th>
-        </tr>
-      </thead>
+      <!-- ...thead... -->
       <tbody>
-        <tr>
-          <td>Richard Hendricks</td>
-          <td>richard@piedpiper.com</td>
-        </tr>
-        <tr>
-          <td>Bertram Gilfoyle</td>
-          <td>gilfoyle@piedpiper.com</td>
-        </tr>
-        <tr>
-          <td>Dinesh Chugtai</td>
-          <td>dinesh@piedpiper.com</td>
+        <tr v-for="emp in employees" :key="emp.id" >
+        <td>{{emp.name}}</td>       
+        <td>{{emp.email}}</td>   
         </tr>
       </tbody>
     </table>
   </div>
 </template>
 
-
 <script>
    export default{
-      name:"employe-table"
+      name:"employe-table",
+      props:{
+          employees:Array
+      }
     }
 </script>
 
