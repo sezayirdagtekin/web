@@ -28,7 +28,7 @@
 
 <script>
    export default{
-      name:"employe-table-component"
+      name:"employe-table"
     }
 </script>
 
