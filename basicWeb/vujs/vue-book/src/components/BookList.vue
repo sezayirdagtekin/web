@@ -2,7 +2,7 @@
   <div>
     <h1>{{title}}</h1>
     <ul>
-      <li v-for="book in books"> {{book.title}} -  {{book.author}}</li>
+      <li v-for="book in books"> {{book.title}}:{{book.author}}</li>
 
     </ul>
   </div>
@@ -16,9 +16,9 @@ export default {
     return {
       title: "All Books",
       books: [
-        { title: "Anna Karenina", author: "Leo Tolstoy" },
-        { title: "Madame Bovary", author: "Gustave Flaubert" },
-        { title: "The Stories of Anton Chekhov", author: "Anton Chekhov" }
+    {title: 'Self-Reliance', author: 'Ralph Waldo Emerson'},
+    {title: 'American Gods', author: 'Neil Gaiman'},
+    {title: 'Amusing Ourselves to Death', author: 'Neil Postman'},
       ]
     };
   }
@@ -26,15 +26,13 @@ export default {
 </script>
 
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
+h1,h2 {
+  font-weight: normal
 }
 
 ul {
-  list-style: none;
-  padding: 5px;
-  margin: 5px;
+  list-style-type: none;
+  padding: 0;
 }
 li {
   display: block;
