@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <h2>Product List Two</h2>
 
     <ul>
@@ -13,7 +13,11 @@
 
 <script>
 export default {
-  props: ["saleProducts"]
+  computed: {
+    saleProducts() {
+      return this.$store.state.products;
+    }
+  }
 };
 </script>
 
@@ -24,7 +28,7 @@ div {
   margin-bottom: 30px;
   padding: 10px 20px;
 }
-ul{
+ul {
   padding: 0;
   list-style-type: none;
 }

@@ -2,8 +2,8 @@
   <div id="app">
     <img src="./assets/logo.png" />
 
-    <product-list-one v-bind:saleProducts="products"></product-list-one>
-    <product-list-two v-bind:saleProducts="products"></product-list-two>
+    <product-list-one></product-list-one>
+    <product-list-two></product-list-two>
   </div>
 </template>
 
@@ -14,18 +14,8 @@ import ProductListTwoVue from "./components/ProductListTwo.vue";
 export default {
   name: "app",
   components: {
-    'product-list-one': ProductListOne,
-    'product-list-two': ProductListTwoVue
-  },
-  data() {
-    return {
-
-      products: [
-        { name: "Banana", price: 20 },
-        { name: "Shiny Star", price: 40 },
-        { name: "Red shells", price: 10 }
-      ]
-    };
+    "product-list-one": ProductListOne,
+    "product-list-two": ProductListTwoVue
   }
 };
 </script>
