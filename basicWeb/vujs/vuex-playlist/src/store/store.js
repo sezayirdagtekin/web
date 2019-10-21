@@ -26,12 +26,21 @@ Vue.use(Vuex);
         }
     },
     mutations: {
-        reducePrice:state => {
+        reducePrice:(state,payload) => {
             state.products.forEach(element => {
-            element.price=element.price-1
+            element.price=element.price-payload
             
           });
     }
+    },
+
+    actions: {
+        reducePrice:(context,payload)=>{
+            setTimeout(function () {
+                context.commit('reducePrice',payload);
+                
+            },3000)
+        }
     }
 
 
