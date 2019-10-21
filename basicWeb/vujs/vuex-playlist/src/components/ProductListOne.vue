@@ -1,8 +1,8 @@
 <template>
-  <div >
+  <div>
     <h2>Product List One</h2>
     <ul>
-      <li v-for="product in products">
+      <li v-for="product in saleProducts">
         <span class="name">{{ product.name }}</span>
         <span class="price">£{{ product.price }}</span>
       </li>
@@ -12,26 +12,29 @@
 
 <script>
 export default {
- 
-computed: {
-  products() {
-    return this.$store.state.products; 
+  computed: {
+    products() {
+      return this.$store.state.products;
+    },
+    saleProducts() {
+      return this.$store.getters.saleProducts;
+
+    }
   }
-},
-}
+};
 </script>
 
 <style scoped>
-div{
+div {
   background: #fff8b1;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
   padding: 10px 20px;
 }
- ul {
+ul {
   padding: 0;
 }
-  li {
+li {
   display: inline-block;
   margin-right: 10px;
   margin-top: 10px;

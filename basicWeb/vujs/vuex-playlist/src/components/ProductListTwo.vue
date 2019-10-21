@@ -14,8 +14,11 @@
 <script>
 export default {
   computed: {
-    saleProducts() {
+    products() {
       return this.$store.state.products;
+    },
+    saleProducts() {
+      return this.$store.getters.saleProducts;
     }
   }
 };

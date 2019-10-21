@@ -12,4 +12,17 @@ Vue.use(Vuex);
             {name: 'Red Shells', price: 80}
         ]
     },
+    getters: {
+        saleProducts: state => {
+            var sales = state.products.map(product => {
+                return {
+                  name: "**" + product.name + "**",
+                  price: product.price / 2
+                };
+              });
+        
+              return sales;
+
+        }
+    }
  });
