@@ -24,5 +24,16 @@ Vue.use(Vuex);
               return sales;
 
         }
+    },
+    mutations: {
+        reducePrice:state => {
+            state.products.forEach(element => {
+            element.price=element.price-1
+            
+          });
     }
+    }
+
+
  });
+ 
