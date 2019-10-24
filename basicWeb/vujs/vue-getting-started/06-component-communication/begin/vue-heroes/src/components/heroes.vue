@@ -31,7 +31,7 @@
           <!-- <heroes-list> -->
 
           <!-- <hero-detail> -->
-          <HeroDetail v-else-if="selectedHero"></HeroDetail>
+          <HeroDetail v-else-if="selectedHero" :hero="selectedHero"></HeroDetail>
     
           <div v-if="selectedHero">
             <div class="card">
