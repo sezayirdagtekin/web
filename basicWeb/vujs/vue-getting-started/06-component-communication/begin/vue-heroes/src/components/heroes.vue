@@ -77,7 +77,7 @@ export default {
       this.message = '';
     },
     cancelHero() {
-      this.selectedHero = undefined;
+    //  this.selectedHero = undefined;
     },
     saveHero() {
       const index = this.heroes.findIndex(h => h.id === this.selectedHero.id);
