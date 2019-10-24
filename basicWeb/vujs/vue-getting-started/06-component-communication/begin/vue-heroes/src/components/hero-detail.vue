@@ -92,9 +92,13 @@ export default {
 
   methods: {
     cancelHero() {
-     this.hero=undefined;
+     this.hero=this.$emit('cancel');
     },
-    saveHero() {},
+    saveHero() {
+      this.$emit('save',this.clonedHero);
+
+    },
+    
     handleTheCapes(newValue) {
       const value = parseInt(newValue, 10);
       switch (value) {

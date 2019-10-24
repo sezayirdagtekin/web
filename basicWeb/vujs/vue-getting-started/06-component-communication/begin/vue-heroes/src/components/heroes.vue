@@ -4,7 +4,6 @@
       <h2 class="title">Heroes</h2>
       <div class="columns">
         <div class="column is-8" v-if="heroes">
-          <!-- <heroes-list> -->
           <ul v-if="!selectedHero">
             <li v-for="hero in heroes" :key="hero.id">
               <div class="card">
@@ -28,14 +27,12 @@
               </div>
             </li>
           </ul>
-          <!-- <heroes-list> -->
-
-          <!-- <hero-detail> -->
-          <HeroDetail v-else-if="selectedHero" :hero="selectedHero"></HeroDetail>
-    
-        
-          <!-- </hero-detail> -->
-
+          <HeroDetail
+            :hero="selectedHero"
+            @save="saveHero"
+            @cancel="cancelHero"
+            v-if="selectedHero"
+          />
           <div class="notification is-info" v-show="message">{{ message }}</div>
         </div>
       </div>
@@ -44,7 +41,7 @@
 </template>
 
 <script>
-import { ourHeroes } from '../shared';
+import { heroWatchers, lifecycleHooks, ourHeroes, logger } from '../shared';
 import HeroDetail from '@/components/hero-detail';
 
 export default {
@@ -58,12 +55,13 @@ export default {
     };
   },
   components: {
-    HeroDetail
+    HeroDetail,
   },
+  mixins: [lifecycleHooks, heroWatchers],
   created() {
     this.loadHeroes();
+    logger.info(`${this.componentName} created hook called`);
   },
-
   methods: {
     async getHeroes() {
       return new Promise(resolve => {
@@ -77,19 +75,17 @@ export default {
       this.message = '';
     },
     cancelHero() {
-    //  this.selectedHero = undefined;
+      this.selectedHero = undefined;
     },
-    saveHero() {
-      const index = this.heroes.findIndex(h => h.id === this.selectedHero.id);
-      this.heroes.splice(index, 1, this.selectedHero);
+    saveHero(hero) {
+      const index = this.heroes.findIndex(h => h.id === hero.id);
+      this.heroes.splice(index, 1, hero);
       this.heroes = [...this.heroes];
       this.selectedHero = undefined;
     },
     selectHero(hero) {
       this.selectedHero = hero;
     },
-  
   },
-
 };
 </script>
