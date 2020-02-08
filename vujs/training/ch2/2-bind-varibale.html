@@ -14,6 +14,8 @@
 		<!--Call method sayHello-->
 		<p><a v-bind:href="google"> Go to Google</a></p>
 		<p><a :href="amazon"> Go to Amazon</a></p>
+
+		<p v-html="netflix"> </p>
 	</div>
 	<script>
 
@@ -21,7 +23,8 @@
 			el: '#app',
 			data: {
 				google: 'http://www.google.com',
-				amazon: 'http://www.amazon.com'
+				amazon: 'http://www.amazon.com',
+				netflix:'<a href="http://www.netflix.com"> Netflix <a/>'
 			}
 		})
 	</script>
