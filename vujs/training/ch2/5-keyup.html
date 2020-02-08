@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<p>
+			Key up:<input type="text" v-on:keyup="alertMe()" />
+		</p>
+		
+		<p>
+			Key enter:<input type="text" v-on:keyup.enter="alertMe()" />
+		</p>
+				
+		<p>
+			Key space:<input type="text" v-on:keyup.space="alertMe()" />
+		</p>
+
+	</div>
+
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				message: 'Key up!'
+			},
+			methods: {
+				alertMe: function () {
+					alert(this.message)
+				}
+			}
+		})
+	</script>
+
+</body>
+
+</html>
