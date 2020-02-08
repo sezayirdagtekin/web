@@ -11,7 +11,9 @@
 
 <body>
 	<div id="app">
-		<p v-on:mousemove="updateCoordinate"> Move mouse... {{ x }}-{{y}}</p>
+		<p v-on:mousemove="updateCoordinate"> Move mouse... START CHNAGE COORDINATES</p>
+		<p v-on:mousemove.stop=""> Move mouse...STOP CHANGING COORDINATES</p>
+		<p>Coordınates:{{ x }}-{{y}}</p>
 	</div>
 
 	<script>
