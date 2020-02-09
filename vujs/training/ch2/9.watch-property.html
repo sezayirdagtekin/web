@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+
+		<button v-on:click="counter++">Increase</button>
+		<button v-on:click="counter--">Decrease</button>
+		<button v-on:click="doSomething">Nothing</button>
+		<p> Counter is: {{ counter }}</p>
+		<p>{{ output }}</p>
+		<p>{{ doSomething() }}</p>
+	</div>
+	<script>
+
+		new Vue({
+			el: '#app',
+			data: {
+				counter: 0
+			},
+			computed: {
+				output: function () {
+					console.log("Call computed")
+					return this.counter > 5 ? 'Counter is greater than 5' : 'Counter is less than 5'
+				}
+			},
+			watch: {
+				counter: function (value) {
+					console.log("Call watch")
+					let vm = this;
+					setTimeout(function () {
+						vm.counter = 0
+					}, 5000);
+				}
+			},
+			methods: {
+				doSomething: function () {
+					console.log("Call method")
+
+				}
+			}
+
+
+		})
+	</script>
+</body>
+
+</html>
