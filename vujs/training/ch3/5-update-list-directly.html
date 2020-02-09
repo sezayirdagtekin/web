@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<p>
+			<input type="text" v-model="name" />
+			<button @click="fruits.push(name)">Add</button>
+		</p>
+		<ul>
+			<li v-for="(fruit,index) in fruits">
+			{{fruit}}
+			</li>
+		</ul>
+		<ul>
+
+	</div>
+	<script>
+
+		new Vue({
+			el: '#app',
+			data: {
+				fruits: ['Apple', 'Orange', 'Banana'],
+				name: ''
+			}
+
+		})
+	</script>
+</body>
+
+</html>
