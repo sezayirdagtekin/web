@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<p>{{title}}</p>
+		<button @click="change"> Update title</button>
+		<button @click="destroy"> Destroy</button>
+	</div>
+
+	<script>
+
+		let vm = new Vue({
+			el: "#app",
+			data: {
+				title: "Vue instance title"
+			},
+
+			beforeCreate: function () {
+				console.log('beforeCreated...')
+			},
+
+			created: function () {
+				console.log('created...')
+			},
+			beforeMount: function () {
+				console.log('beforeMounted...')
+			},
+			mounted: function () {
+				console.log('mounted...')
+			},
+			beforeUpdate: function () {
+				console.log('beforeUpdated...')
+			},
+			updated: function () {
+				console.log('updated...')
+			},
+			beforeDestroy: function () {
+				console.log('beforeDestroy...')
+			},
+			destroyed: function () {
+				console.log('destroyed...')
+			},
+			methods: {
+
+				destroy: function () {
+					this.$destroy()
+
+				},
+				change: function () {
+					this.title = "title is chnaged"
+
+				}
+			}
+
+		});
+
+	</script>
+</body>
+
+</html>
