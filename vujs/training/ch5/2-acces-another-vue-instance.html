@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+	<div id="app1">
+		<h1>
+		{{title}}
+		</h1>
+	</div>
+
+	<div id="app2">	
+		<h1>
+		{{title}}
+		</h1>
+		<button @click="onChnage()"> change title vm 1</button>
+	</div>
+	
+	<script>
+
+		let vm1=new Vue({
+			el: '#app1',
+			data: {
+				title:"First Vue instance title"
+			}			
+		});
+
+   setTimeout(function(){
+	   vm1.title="Title chnaged by timer outside Vue instance!"
+   },3000);
+   
+		let vm2=new Vue({
+			el: '#app2',
+			data: {
+				title:"Second Vue instance title"
+			},
+			methods:{
+				onChnage:function(){
+					vm1.title="Changed!"
+				}
+			}			
+		});
+	</script>
+</body>
+
+</html>
