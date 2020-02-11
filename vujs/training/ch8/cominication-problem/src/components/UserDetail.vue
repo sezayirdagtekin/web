@@ -10,7 +10,23 @@
 <script>
 
 export default{
+    /*1. option use arrays
     props:['myName'],
+    */
+
+    /*2. option use object
+    props:{
+        myName:String // define type
+    },
+    */
+    props:{
+        myName:{
+            type:String,
+            required:true
+            // default:'Jane'
+            }
+        },
+
     methods:{
         reverseName(){
             return this.myName.split("").reverse().join("");
