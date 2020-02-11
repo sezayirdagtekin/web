@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+	<div id="app1">
+		<app-comp></app-comp>
+	</div>
+	<div id="app2">
+		<app-comp></app-comp>
+	</div>
+
+	<script>
+		var cmp = {
+			data: function () {
+				return {
+					status: 'Critical'
+				}
+			},
+			template: '<p> Server status : {{status}} <button @click="changeStatus"> Change</button> </p>',
+
+			methods: {
+				changeStatus: function () {
+					this.status = 'Normal'
+				}
+			}
+
+		};
+		//Create new Vue instance 1
+		let vm1 = new Vue({
+			el: "#app1",
+			components: {
+				'app-comp': cmp
+			}
+		});
+
+		//Create new Vue instance 2
+		let vm2 = new Vue({
+			el: "#app2",
+			components: {
+				'app-comp': cmp
+			}
+		});
+
+	</script>
+</body>
+
+</html>
