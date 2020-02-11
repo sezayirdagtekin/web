@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-    <app-server></app-server>
+    <app-servers></app-servers>
   </div>
 </template>
 
-<script>
-</script>
+<script></script>
 
 <style></style>
