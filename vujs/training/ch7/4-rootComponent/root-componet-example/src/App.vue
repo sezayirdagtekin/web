@@ -7,7 +7,7 @@
 
 <script>
 export default{
-  data: function(){
+  data: function() {
       return {
        status:'Critical',
        ip:'192.10.23.54'
