@@ -4,21 +4,24 @@
         <p>Many Details</p>
         <p>User name: {{myName}} </p>
         <p>Reverse name: {{  reverseName()}} </p>
+        <button  @click="sendParent">Send parent</button>
+
     </div>
 </template>
 
 <script>
 
 export default{
+
     /*1. option use arrays
     props:['myName'],
     */
 
-    /*2. option use object
+ //2. option use object
     props:{
         myName:String // define type
     },
-    */
+    /* 3. option- (doesn't  work for sending data from  chield to parent)
     props:{
         myName:{
             type:String,
@@ -26,10 +29,15 @@ export default{
             // default:'Jane'
             }
         },
+    */
 
     methods:{
         reverseName(){
             return this.myName.split("").reverse().join("");
+        },
+        sendParent() {
+          this.$emit("fromChield", "Cemil");
+          console.log('message emit from child component')
         }
     }
 }
