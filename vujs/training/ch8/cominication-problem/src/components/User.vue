@@ -10,11 +10,11 @@
       <div class="col-xs-12 col-sm-6">
         <app-user-detail
           v-bind:myName="name"
-          @fromChield="updateParentName"  :clearFn="clear"
+          @fromChield="updateParentName"  :clearFn="clear" :userAge="age"
         ></app-user-detail>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <app-user-edit></app-user-edit>
+        <app-user-edit :userAge="age" @ageFromEditPage="editAge"></app-user-edit>
       </div>
     </div>
   </div>
@@ -28,6 +28,7 @@ export default {
   data() {
     return {
       name: "sezayir",
+      age:27,
       color: "green"
     };
   },
@@ -44,6 +45,9 @@ export default {
     clear(){
         console.log('clear..')
         this.name=''
+    },
+    editAge(value){
+        this.age=value
     }
   },
   components: {

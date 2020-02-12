@@ -1,28 +1,28 @@
 <template>
-    <div class="component">
-        <h3>You may view the User Details here</h3>
-        <p>Many Details</p>
-        <p>User name: {{myName}} </p>
-        <p>Reverse name: {{  reverseName()}} </p>
-        <button  @click="sendParent">Send parent</button>
-       <button  @click="clearFn()">Clear</button>
-    </div>
+  <div class="component">
+    <h3>You may view the User Details here</h3>
+    <p>Many Details</p>
+    <p>User name: {{ myName }}</p>
+    <p>Reverse name: {{ reverseName() }}</p>
+    <p>User age: {{ userAge }}</p>
+    <button @click="sendParent">Send parent</button>
+    <button @click="clearFn()">Clear</button>
+  </div>
 </template>
 
 <script>
-
-export default{
-
-    /*1. option use arrays
+export default {
+  /*1. option use arrays
     props:['myName'],
     */
 
- //2. option use object. define type
-    props:{
-        myName:String ,
-        clearFn:Function // comination with call back
-    },
-    /* 3. option- (doesn't  work for sending data from  chield to parent)
+  //2. option use object. define type
+  props: {
+    myName: String,
+    userAge: Number,
+    clearFn: Function // comination with call back
+  },
+  /* 3. option- (doesn't  work for sending data from  chield to parent)
     props:{
         myName:{
             type:String,
@@ -32,20 +32,23 @@ export default{
         },
     */
 
-    methods:{
-        reverseName(){
-            return this.myName.split("").reverse().join("");
-        },
-        sendParent() {
-          this.$emit("fromChield", "Cemil");
-          console.log('message emit from child component')
-        }
+  methods: {
+    reverseName() {
+      return this.myName
+        .split("")
+        .reverse()
+        .join("");
+    },
+    sendParent() {
+      this.$emit("fromChield", "Cemil");
+      console.log("message emit from child component");
     }
-}
+  }
+};
 </script>
 
 <style scoped>
-    div {
-        background-color: lightcoral;
-    }
+div {
+  background-color: lightcoral;
+}
 </style>
