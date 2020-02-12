@@ -5,7 +5,7 @@
         <p>User name: {{myName}} </p>
         <p>Reverse name: {{  reverseName()}} </p>
         <button  @click="sendParent">Send parent</button>
-
+       <button  @click="clearFn()">Clear</button>
     </div>
 </template>
 
@@ -17,9 +17,10 @@ export default{
     props:['myName'],
     */
 
- //2. option use object
+ //2. option use object. define type
     props:{
-        myName:String // define type
+        myName:String ,
+        clearFn:Function // comination with call back
     },
     /* 3. option- (doesn't  work for sending data from  chield to parent)
     props:{

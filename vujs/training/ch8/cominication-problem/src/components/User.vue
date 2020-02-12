@@ -10,7 +10,7 @@
       <div class="col-xs-12 col-sm-6">
         <app-user-detail
           v-bind:myName="name"
-          @fromChield="updateParentName" 
+          @fromChield="updateParentName"  :clearFn="clear"
         ></app-user-detail>
       </div>
       <div class="col-xs-12 col-sm-6">
@@ -33,13 +33,17 @@ export default {
   },
   methods: {
     changeName() {
-      this.name = "Anna";
+      this.name = "Anna"
       this.color='green'
     },
     updateParentName(value) {
         console.log("value:"+value)
-      this.name = value;
+      this.name = value
       this.color='red'
+    },
+    clear(){
+        console.log('clear..')
+        this.name=''
     }
   },
   components: {
