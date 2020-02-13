@@ -4,14 +4,23 @@
     <p>Many Details</p>
     <p>User name: {{ myName }}</p>
     <p>Reverse name: {{ reverseName() }}</p>
-    <p>User age: {{ userAge }}</p>
+    <p>User age call back: {{ userAge }}</p>
+    <p>User age from eventBus: {{ age }}</p>
     <button @click="sendParent">Send parent</button>
     <button @click="clearFn()">Clear</button>
   </div>
 </template>
 
 <script>
+import  {eventBus} from  '../main';
+
 export default {
+    data() {
+        return {
+            age: 0
+        }
+    },
+
   /*1. option use arrays
     props:['myName'],
     */
@@ -43,7 +52,16 @@ export default {
       this.$emit("fromChield", "Cemil");
       console.log("message emit from child component");
     }
+  },
+  created() {
+      eventBus.$on("ageFromEditPage",(data)=>{
+      console.log("user detail created method..listen event bus:"+data);
+      this.age=data;
+   
+      });
   }
+
+
 };
 </script>
 

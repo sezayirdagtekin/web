@@ -4,6 +4,7 @@
     <p>
       I'm an awesome User! <span :class="color"> {{ name }}</span>
     </p>
+    <p>Age:{{age}}</p>
     <button @click="changeName">Change name</button>
     <hr />
     <div class="row">
