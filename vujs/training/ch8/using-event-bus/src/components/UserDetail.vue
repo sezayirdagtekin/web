@@ -2,28 +2,32 @@
   <div class="component">
     <h3>You may view the User Details here</h3>
     <p>User name from eventBus: {{ name }}</p>
+    <p>user age: {{ age }}</p>
+    <button @click="change">Change age</button>
   </div>
 </template>
 
 <script>
-import  {eventBus} from  '../main';
+import { eventBus } from "../main";
 
 export default {
-    data() {
-        return {
-            name: ""
-        }
-    },
+  data() {
+    return {
+      name: "",
+      age: 27
+    };
+  },
 
   methods: {
-
+    change() {
+      eventBus.$emit(changeAge(this.age));
+    }
   },
   created() {
-      eventBus.$on("nameFromEditPage",(data)=>{
-      this.name=data;   
-      });
+    eventBus.$on("ageFromDetailPage", data => {
+      this.name = data;
+    });
   }
-
 };
 </script>
 

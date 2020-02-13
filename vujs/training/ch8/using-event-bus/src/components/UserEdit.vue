@@ -3,6 +3,7 @@
     <h3>You may edit the User here</h3>
     <p>Edit me!</p>
     <p>User name: {{ name }}</p>
+    <p>user age: {{ age }}</p>
     <input type="text" v-model="name" />
     <button @click="editName">Edit Name</button>
   </div>
@@ -14,7 +15,8 @@ import { eventBus } from "../main";
 export default {
   data() {
     return {
-      name: ''
+      name: "",
+      age: 0
     };
   },
   props: ["userAge"],
@@ -22,6 +24,11 @@ export default {
     editName() {
       eventBus.$emit("nameFromEditPage", this.name);
     }
+  },
+  created() {
+    this.$on("ageWasEdited", data => {
+      this.age = data;
+    });
   }
 };
 </script>
