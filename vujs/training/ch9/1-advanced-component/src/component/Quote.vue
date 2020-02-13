@@ -18,6 +18,9 @@
      margin: 5px auto;
      text-align: center
  }
-</style> >
+
+ h2{
+     color:red
+ }
 
 </style>

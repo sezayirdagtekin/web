@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-xs-12">
         <app-quote>
-        <h2> This is lote example</h2>
+        <h2> {{title}}</h2>
         <p> That is wonderful</p>
          </app-quote>
       </div>
@@ -21,10 +21,13 @@ export default {
 
   data() {
     return {
-      quote: "a wonderfull quote"
+      title: "This is slot example!"
     };
   }
 };
 </script>
 
-<style></style>
+<style scoped>
+
+
+</style>
