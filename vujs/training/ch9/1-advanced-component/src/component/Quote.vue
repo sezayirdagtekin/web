@@ -1,26 +1,33 @@
 <template>
-    <div>
-    <slot></slot>
+  <div>
+    <div class="titleStyle">
+      <slot name="title"></slot>
     </div>
+    <div>
+      <slot name="content"></slot>
+    </div>
+
+  </div>
 </template>
 
 <script>
-    export default {
-
-    }
+export default {};
 </script>
 
 <style scoped>
- div{
-     border:  1px solid #ccc;
-     box-shadow: 1px 1px 1px black;
-     padding: 20px;
-     margin: 5px auto;
-     text-align: center
- }
+div {
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px black;
+  padding: 20px;
+  margin: 5px auto;
+  text-align: center;
+}
 
- h2{
-     color:red
- }
-
+h2 {
+  color: red;
+}
+.titleStyle{
+    font-style: italic;
+    color:blue;
+}
 </style>
