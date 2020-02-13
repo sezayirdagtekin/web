@@ -20,11 +20,12 @@ export default {
 
   methods: {
     change() {
-      eventBus.$emit(changeAge(this.age));
+      eventBus.$emit("ageWasEdited",this.age);
     }
   },
   created() {
-    eventBus.$on("ageFromDetailPage", data => {
+    console.log("event bus on..");
+    eventBus.$on("nameWasEdited", data => {
       this.name = data;
     });
   }
