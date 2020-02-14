@@ -64,13 +64,13 @@
                     <label for="male">
                         <input
                                 type="radio"
-                                id="male"
+                                id="male" v-model="gender"
                                 value="Male"> Male
                     </label>
                     <label for="female">
                         <input
                                 type="radio"
-                                id="female"
+                                id="female" v-model="gender"
                                 value="Female"> Female
                     </label>
                 </div>
@@ -110,7 +110,7 @@
                         <ul>
                             <li v-for=" item  in mailOption" :key="item"> {{item}} </li>
                         </ul>
-                        <p>Gender:</p>
+                        <p>Gender:{{gender}}</p>
                         <p>Priority:</p>
                         <p>Switched:</p>
                     </div>
@@ -130,7 +130,8 @@
                      age:27
                 }   ,
                 message:'A new text' ,
-                 mailOption:[]           
+                 mailOption:[] ,
+                 gender:'Male'          
             }
            
         },
