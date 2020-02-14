@@ -79,9 +79,12 @@
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 from-group">
                     <label for="priority">Priority</label>
                     <select
-                            id="priority"
+                            id="priority" v-model="selectedPriority"
                             class="form-control">
-                        <option></option>
+                        <option v-for="priority in priorities" :key="priority">
+                           <!-- alternative way to se t default selectedv value is>>> :selected="priority=='Medium'" -->
+                             {{priority}}
+                        </option>
                     </select>
                 </div>
             </div>
@@ -111,7 +114,7 @@
                             <li v-for=" item  in mailOption" :key="item"> {{item}} </li>
                         </ul>
                         <p>Gender:{{gender}}</p>
-                        <p>Priority:</p>
+                        <p>Priority:{{selectedPriority}}</p>
                         <p>Switched:</p>
                     </div>
                 </div>
@@ -131,7 +134,9 @@
                 }   ,
                 message:'A new text' ,
                  mailOption:[] ,
-                 gender:'Male'          
+                 gender:'Male',
+                 priorities:['Low','Medium','High'] ,
+                 selectedPriority:'High'       
             }
            
         },
