@@ -14,9 +14,10 @@
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
+                        <!--use v-model as lazy after click any where-->
                         <input
                                 type="password"
-                                id="password" v-model="userData.password"
+                                id="password" v-model.lazy="userData.password"
                                 class="form-control">
                     </div>
                     <div class="form-group">
