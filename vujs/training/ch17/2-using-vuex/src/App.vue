@@ -15,7 +15,7 @@
 <script>
     import Counter from './components/Counter.vue';
     import Result from './components/Result.vue';
-      import AnotherResult from './components/AnotherResult.vue';
+    import AnotherResult from './components/AnotherResult.vue';
 
     export default {
 
