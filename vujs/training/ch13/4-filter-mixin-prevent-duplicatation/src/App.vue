@@ -18,7 +18,11 @@
 <script>
 import { FruitMixin } from "./mixin";
 export default {
-  mixins: [FruitMixin]
+  mixins: [FruitMixin],
+  
+  created() {
+    console.log("created");
+  }
 };
 </script>
 
