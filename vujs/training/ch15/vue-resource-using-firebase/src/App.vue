@@ -38,7 +38,7 @@ export default {
   methods: {
     submit() {
       this.$http
-        .post("dummyUrl/data.json", this.user)
+        .post('', this.user)
         .then(
           reponse => {
             console.log(reponse);
@@ -50,7 +50,7 @@ export default {
     },
     fetchData() {
       this.$http
-        .get("dummyUrl/data.json")
+        .get('')
         .then(response => {
           return response.json();
         })
