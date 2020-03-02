@@ -5,7 +5,7 @@
          <li v-for="parent in parents" :key="parent.name"> {{parent.name}} </li>
     </ul>
 <hr>
-{{myTree}}
+
 <!--
      <ul>
          <li v-for="child in children" :key="child.name"> {{child.name}} </li>
