@@ -4,13 +4,13 @@
     <h1>
       {{name}}
     </h1>
-    <!--
+    
     <ul>
          <li v-for="parent in parents" :key="parent.name"> {{parent.name}} </li>
     </ul>
 <hr>
 
-
+<!--
      <ul>
          <li v-for="child in children" :key="child.name"> {{child.name}} </li>
     </ul>
@@ -28,7 +28,41 @@ import $ from 'jquery'
 export default {
   data() {
     return {
-      name: '2 way data tree'
+
+    name: 'Airlines',
+    parents: [
+        {
+            'name': 'Aviation',
+            'isparent': true
+        },
+        {
+            'name': 'Transparent_companies',
+            'isparent': true
+        },
+        {
+            'name': 'Transport_operators',
+            'isparent': true
+        }
+    ],
+    children: [
+        {
+            'name': 'Airline_alliances',
+            'isparent': false
+        },
+        {
+            'name': 'Airlines_by_continent',
+            'isparent': false
+        },
+        {
+            'name': 'Airlines_by_type',
+            'isparent': false
+        },
+        {
+            'name': 'Defunct_airlines',
+            'isparent': false
+        }
+    ]
+
     }
   },
 
