@@ -1,12 +1,16 @@
 <template>
   <div class="categoryHierarchy">
-    
+
+    <h1>
+      {{name}}
+    </h1>
+    <!--
     <ul>
          <li v-for="parent in parents" :key="parent.name"> {{parent.name}} </li>
     </ul>
 <hr>
 
-<!--
+
      <ul>
          <li v-for="child in children" :key="child.name"> {{child.name}} </li>
     </ul>
@@ -20,11 +24,14 @@
 
 <script>
 import $ from 'jquery'
-import { FruitMixin } from "./../mixin/mixin";
 
 export default {
+  data() {
+    return {
+      name: '2 way data tree'
+    }
+  },
 
-  mixins: [FruitMixin],
   created() {
     console.log("created");
   }

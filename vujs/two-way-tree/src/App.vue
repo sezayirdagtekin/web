@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Data from "./components/Data.vue";
+import Tree from "./components/Tree.vue";
 
 export default {
   created() {
@@ -17,7 +17,7 @@ export default {
   },
 
   components: {
-    appData: Data
+    appData: Tree
   }
 };
 </script>
